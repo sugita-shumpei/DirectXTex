@@ -14,19 +14,6 @@
 using namespace DirectX;
 using namespace DirectX::Internal;
 
-#ifndef _WIN32
-namespace
-{
-    inline void * _aligned_malloc(size_t size, size_t alignment)
-    {
-        size = (size + alignment - 1) & ~(alignment - 1);
-        return std::aligned_alloc(alignment, size);
-    }
-
-#define _aligned_free free
-}
-#endif
-
 //-------------------------------------------------------------------------------------
 // Determines number of image array entries and pixel size
 //-------------------------------------------------------------------------------------
